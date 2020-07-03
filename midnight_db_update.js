@@ -12,8 +12,8 @@ function queryDb(filename, sqlQuery) {
 
     return new Promise((resolve, reject) => {
 
-        const DATA_BASE = new SQLITE3.Database('./DBStore/' + filename);
-        DATA_BASE.each(sqlQuery, (err, row) => {
+        const DATABASE = new SQLITE3.Database('./DBStore/' + filename);
+        DATABASE.each(sqlQuery, (err, row) => {
             if (err) {
                 reject(err); // optional: you might choose to swallow errors.
             } else {
